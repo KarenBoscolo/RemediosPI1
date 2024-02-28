@@ -1,9 +1,10 @@
 package com.RemediosPI1.RemediosPI1.repositories;
 
-import com.RemediosPI1.RemediosPI1.models.PrescricaoModel;
+
+import com.RemediosPI1.RemediosPI1.models.PacienteModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PrescricaoRepository extends JpaRepository<PrescricaoModel, Long> {
+public interface PacienteRepository extends JpaRepository<PacienteModel, Long>  {
 }

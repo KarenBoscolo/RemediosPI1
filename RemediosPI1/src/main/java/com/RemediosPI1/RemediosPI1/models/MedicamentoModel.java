@@ -1,4 +1,4 @@
-package com.RemediosPI1.RemediosPI1.Models;
+package com.RemediosPI1.RemediosPI1.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
