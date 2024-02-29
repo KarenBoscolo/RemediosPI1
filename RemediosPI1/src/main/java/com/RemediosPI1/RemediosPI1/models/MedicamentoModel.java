@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -20,4 +21,7 @@ public class MedicamentoModel {
     private int quantidade;
     @Temporal(TemporalType.DATE)
     private LocalDate vencimento;
+
+    @ManyToMany(mappedBy = "medicamentos")
+    private List<PrescricaoModel> prescricoes;
 }

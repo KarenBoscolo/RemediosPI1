@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -23,8 +24,10 @@ public class PrescricaoModel {
     @JoinColumn(name = "paciente_id")
     private PacienteModel paciente;
 
-    @ManyToOne //Como mudar para @ManyToMany?
-    @JoinColumn(name = "medicamento_id")
-    private MedicamentoModel medicamento;
+    @ManyToMany
+    @JoinTable(name = "prescricao_medicamento",
+            joinColumns = @JoinColumn(name = "prescricao_id"),
+            inverseJoinColumns = @JoinColumn(name = "medicamento_id"))
+    private List<MedicamentoModel> medicamentos;
 
 }
