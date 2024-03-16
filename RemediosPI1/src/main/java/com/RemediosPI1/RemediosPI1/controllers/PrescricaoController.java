@@ -34,7 +34,7 @@ public class PrescricaoController {
     }
 
     @PostMapping
-    public ResponseEntity<PrescricaoModel> savePrescricao(@RequestBody PrescricaoModel prescricao) {
+    public ResponseEntity<PrescricaoModel> savePrescricao(@RequestBody PrescricaoModel prescricao) throws Exception {
         PrescricaoModel savedPrescricao = prescricaoService.savePrescricao(prescricao);
         return ResponseEntity.ok(savedPrescricao);
     }

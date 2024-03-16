@@ -1,6 +1,7 @@
 package com.RemediosPI1.RemediosPI1.services.impl;
 
 import com.RemediosPI1.RemediosPI1.models.MedicamentoModel;
+import com.RemediosPI1.RemediosPI1.repositories.MedicamentoRepository;
 import com.RemediosPI1.RemediosPI1.services.MedicamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,24 +11,26 @@ import java.util.Optional;
 
 @Service
 public class MedicamentoServiceImpl implements MedicamentoService {
+    @Autowired
+    private MedicamentoRepository medicamentoRepository;
+
     @Override
     public List<MedicamentoModel> getAllMedicamentos() {
-        return null;
+        return medicamentoRepository.findAll();
     }
 
     @Override
     public Optional<MedicamentoModel> getMedicamentoById(Long id) {
-        return Optional.empty();
+        return medicamentoRepository.findById(id);
     }
 
     @Override
     public MedicamentoModel saveMedicamento(MedicamentoModel medicamento) {
-        return null;
+        return medicamentoRepository.save(medicamento);
     }
 
     @Override
     public void deleteMedicamento(Long id) {
-
+        medicamentoRepository.deleteById(id);
     }
 }
-

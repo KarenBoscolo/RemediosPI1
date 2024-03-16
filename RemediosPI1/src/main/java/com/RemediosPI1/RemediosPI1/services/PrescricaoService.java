@@ -9,6 +9,6 @@ import java.util.Optional;
 public interface PrescricaoService {
     List<PrescricaoModel> getAllPrescricoes();
     Optional<PrescricaoModel> getPrescricaoById(Long id);
-    PrescricaoModel savePrescricao(PrescricaoModel prescricao);
+    PrescricaoModel savePrescricao(PrescricaoModel prescricao) throws Exception;
     void deletePrescricao(Long id);
 }
