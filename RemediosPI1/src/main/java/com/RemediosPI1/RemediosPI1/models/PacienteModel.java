@@ -16,5 +16,6 @@ public class PacienteModel {
     private Long id;
     private String nome;
     private String endereco;
+    private int CPF;
 
 }
